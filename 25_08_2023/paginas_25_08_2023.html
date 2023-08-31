@@ -6,22 +6,35 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/a_donde_ir">
+    <form action="/a_donde_ir" name="miformulario" method="GET">
         <label for="nom">Digite su nombre: </label> 
-        <input type="text" id="nom" placeholder="Solo primer nombre y apellido"><br><br>
+        <input type="text" id="nom" placeholder="Solo primer nombre y apellido" name="nombre"><br><br>
         <label for="edad">Digite su edad: </label> 
-        <input type="text" id="edad"><br><br>
+        <input type="text" id="edad" name="edades"><br><br>
         <label for="ocu">Digite su ocupación: </label> 
-        <input type="text" id="ocu" value="Estudiante"><br><br>
+        <input type="text" id="ocu" value="Estudiante" name="codigo"><br><br>
         <label for="mail">Email: </label> 
-        <input type="email" id="mail"><br><br>
+        <input type="email" id="mail" name="correo"><br><br>
         <label for="contra">Contraseña: </label> 
-        <input type="password" id="contra"><br><br>
+        <input type="password" id="contra" name="contraseña"><br><br>
         <input type="checkbox"><br><br>
         <input type="radio"><br><br>
+
         <textarea name="" id="" cols="30" rows="10"></textarea><br><br>
         <input type="submit"><br><br>
-        
+
+        <button type="submit">Enviar</button><br><br>
+        <button type="reset">Reset</button><br><br>
+        <button type="button">Hacer algo con JS</button><br><br>
+
+
+        <ol type="a">
+            <li>Primer item</li>
+            <li>Segundo item</li>
+            <li>Tercer item</li>
+            <li>Cuarto item</li>
+
+        </ol>
     </form>
 </body>
 </html>
