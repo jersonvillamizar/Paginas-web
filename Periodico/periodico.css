@@ -1,50 +1,80 @@
 body{
-  background-color: #f0cf87;
-  /* background-image: url(./fondo.jpg);
-  background-size: cover; */
+  font-family: 'Oswald', sans-serif;
+  background-image: url(./fondo.png);
+  background-size: cover;
+  font-size: 2.5vh;
+}
+
+.container{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 header{
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  height: 20vh;
+  height: 30vh;
   overflow: hidden;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   align-items: center;
-  
 }
 
 .superior_esquinas{
   display: flex;
   flex-direction: column;
-  margin: auto;
+  font-size: 2vh;
+  height: 25vh;
 }
 
 .izquierda{
   text-align: center;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   grid-column: 1/2;
 }
 
 .superior_img{
-  width: 100%;
+  width: 10vmax;
   height: 10vh;
-  object-fit: cover;
+ 
   object-position: center;
 }
 
 .titulo_cabezal{
-  margin: auto;
   grid-column: 2/6;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.titulo_letra{
+  font-family: "Archive Black Title";
+  font-size: 4vh;
+}
+
+.superior_bigote{
+  width: 50vmax;
+  height: 15vh;
 }
 
 .derecha{
   grid-column: 6/7;
+  /* border: 1px solid blue; */
 }
 
 .derecha_interno{
   display: flex;
   gap: 10px;
+  align-items: center;
+}
+
+.trompeta_derecha{
+  transform: rotateY(0.5turn);
+  margin: 0 0 20px 0;
+}
+
+.trompeta_izquierda{
+  margin: 0 0 10px auto;
 }
 
 .derecha_img{
@@ -54,34 +84,61 @@ header{
   object-position: center;
 }
 
+.posicionar_bigote{
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+}
+
+.bigote_inferior{
+  width: 80vmax;
+  height: 10vh;
+  position: absolute;
+  top: 11.4rem;
+}
+
 main{
+  position: relative;
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 40px;
+  text-align: justify;
+  font-size: 4vh;
 }
 
 .primer{
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
 }
 
-.segundo{
-  border: 1px solid red;
+.tiempo_limitado{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }
 
-.tercero{
-  border: 1px solid red;
-}
-
-footer{
+.objeto_envuelto{
+  grid-column: 1/3;
   width: 100%;
-  margin: auto;
-  border: 1px solid white;
+  padding: 5px;
+}
+
+.envuelto_text{
+  grid-column: 3/7;
+}
+
+.footeer{
+  border-top: 1px solid rgba(211, 178, 79, 0.945);
+  display: flex;
+  justify-content: center;
 }
 
 .footer_img{
-  width: 100%;
+  width: 80vmax;
   height: 10vh;
-  object-fit: cover;
-  object-position: center;
+  position: relative;
+  bottom:0.5rem;
 }
+
 
