@@ -12,6 +12,10 @@ transform: translateX(-50%) translateY(-50%); */
   color: var(--colorText)
 }
 
+body{
+  font-size: 1.4vh;
+}
+
 /* .space{
   height: 600px;
   background-color: var(--colorText);
@@ -43,7 +47,7 @@ a{
 }
 
 .content_logo{
-  font-size: 32px;
+  font-size: 3vh;
   font-weight: 900;
 }
 
@@ -51,7 +55,7 @@ a{
   display: flex;
   align-items: center;
   gap: 30px;
-  font-size: 14px;
+  font-size: 1.5vh;
 }
 
 .links_search:focus {
@@ -123,12 +127,12 @@ a{
 
 .content_main_cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50vh, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20vmax, 1fr));
   gap: 15px;
 }
 
 .second{
-  grid-template-columns: repeat(auto-fit, minmax(40vh, 40vh));
+  grid-template-columns: repeat(auto-fit, minmax(18vmax, 1fr));
 }
 
 .content_main_cards {
@@ -172,7 +176,7 @@ a{
 .marron_subtitle {
   text-align: justify;
   opacity: 0.7;
-  font-size: 15px;
+  font-size: 1.3vh;
   
 }
 
@@ -223,7 +227,7 @@ a{
 }
 
 .verde_date, .verde_name {
-  font-size: 12px;
+  font-size: 1.1vh;
 }
 
 .footeer{
