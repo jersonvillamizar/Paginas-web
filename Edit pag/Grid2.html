@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño de Página con Grid Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+        }
+
+        main {
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        aside {
+            background-color: #ccc;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr; /* Dos columnas: menú y contenido principal */
+            grid-template-rows: auto 1fr auto; /* Filas: encabezado, contenido, pie de página */
+            gap: 10px;
+            height: 85vh;
+        }
+
+        .container > * {
+            padding: 10px;
+        }
+
+        /* Estilos adicionales */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Encabezado</h1>
+        </header>
+        <nav>
+            <h2>Menú de Navegación</h2>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Contenido Principal</h2>
+            <p>Bienvenido al sitio web. Este es el contenido principal de la página.</p>
+        </main>
+        <aside>
+            <h2>Barra lateral</h2>
+            <p>Información adicional, anuncios, enlaces, etc.</p>
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; 2023 Mi Sitio Web</p>
+    </footer>
+</body>
+</html>
+
