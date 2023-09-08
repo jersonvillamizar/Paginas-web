@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container{
+    overflow: hidden;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.logo{
+    grid-column: 1/2;
+    border: 1px solid white;
+    overflow: hidden;
+    align-items: center;
+}
+
+.logotipo{
+    border: 1px solid purple;
+    width: 100%;
+}
+
+.superior_izquierda{
+    grid-column: 2/3;
+    border: 1px solid red;
+    overflow: hidden;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+}
+
+aside {
+    background-color: #ccc;
+    padding: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 20% auto;  /* Dos columnas: menú y contenido principal */
+    grid-template-rows: 20vh auto; /* Filas: encabezado, contenido, pie de página */
+    gap: 10px;
+    height: 100%;
+}
+
+.container > * {
+    padding: 10px;
+}
+
+/* Estilos adicionales */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 5px;
+}
