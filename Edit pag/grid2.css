@@ -95,7 +95,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 5%;
-    font-size: 0.75vw;
+    font-size: 1vmin;
     margin: 5% auto;
 }
 
@@ -104,7 +104,7 @@ header {
 }
 
 nav {
-    font-size: 1.2vmax;
+    font-size: 1vmax;
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5rem 1rem;
     color: var(--colorText);
@@ -286,8 +286,6 @@ aside {
     text-align: center;
 }
 
-
-
 table{
     margin: auto;
     display: table;
@@ -371,7 +369,7 @@ footer {
     height: 100%;
     display: grid;
     grid-template-columns: 20% 80%;  /* Dos columnas: menú y contenido principal */
-    grid-template-rows: 20vh auto; /* Filas: encabezado, contenido, pie de página */
+    grid-template-rows: 20vh minmax(75vh, 100%); /* Filas: encabezado, contenido, pie de página */
     gap: 1vh;
     height: 100%;
 }
@@ -391,7 +389,6 @@ nav li {
 }
 
 @media (max-width: 1000px) {
-
     .logo{
         
         grid-column: 1/3;
