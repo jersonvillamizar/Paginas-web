@@ -1,0 +1,176 @@
+body{
+  font-family: "VeroneseBookCondensed";
+  background-image: url(./fondo2.jpeg);
+  background-size: cover;
+}
+
+.container{
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+  /* border: 1px solid red; */
+  align-items: center;
+}
+
+.superior_esquinas{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1vmax;
+  height: 25vh;
+}
+
+.izquierda{
+  margin-top: 5vh;
+  text-align: center;
+  /* border: 1px solid blue; */
+  grid-column: 1/2;
+}
+
+.superior_img{
+  width: 10vmax;
+  height: 10vh;
+  object-position: center;
+}
+
+.titulo_cabezal{
+  width: 100%;
+  grid-column: 2/6;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.titulo_letra{
+  font-family: "Archive Black Title";
+  font-size: 3vmin;
+}
+
+.superior_bigote{
+  width: 40vw;
+  height: 5vmax;
+}
+
+.derecha{
+  margin-top: 5vh;
+  grid-column: 6/7;
+  align-items: baseline;
+  /* border: 1px solid blue; */
+}
+
+.derecha_interno{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.trompeta_derecha{
+  transform: rotateY(0.5turn);
+  margin: 0 0 20px 0;
+  width: 20vmin;
+  height: 9vmin;
+}
+
+.trompeta_izquierda{
+  margin: 0 0 10px auto;
+  width: 20vmin;
+  height: 9vmin;
+}
+
+.derecha_img{
+  width:17vmin;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.posicionar_bigote{
+  /* border: 1px solid green; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bigote_inferior{
+  width: 90%;
+  max-width: 1250px;
+  height: 5vmax;
+  position: absolute;
+  top: 28vh;
+}
+
+main{
+  line-height: 23pt;
+  padding-top: 5vmin;
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20vmax, 1fr));
+  gap: 4vmin;
+  text-align: justify;
+  font-size: 3.25vmin;
+}
+
+h2{
+  line-height: 40pt;
+}
+
+.primer{
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tiempo_limitado{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.objeto_envuelto{
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/4;
+  width: 100%;
+  height: 80%;
+  padding: 5px;
+}
+
+.envuelto_text{
+  grid-column: 4/9;
+}
+
+.footeer{
+  box-shadow: 10px rgba(0, 0, 0, 0.212); 
+  display: flex;
+  justify-content: center;
+}
+
+.footer_img{
+  width: 100%;
+  height: 10vmin;
+  position: relative;
+  bottom:0.5rem;
+}
+
+.primer_border_inferior{
+  border-bottom: 4px dashed black;
+  margin-bottom: 3vmin;
+  padding-bottom: 3vmin;
+}
+
+.comic{
+  margin-bottom: 2vmin;
+}
