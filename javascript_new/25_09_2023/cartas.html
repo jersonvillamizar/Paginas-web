@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cartas.css">
+    <title>Generador de Cartas Fibonacci</title>
+</head>
+
+<body>
+    <h1>Generador de Cartas Fibonacci</h1>
+    <p>Haz clic en el botón para generar dos números aleatorios y verificar si su suma es un número Fibonacci.</p>
+    <button onclick="generarNumerosYVerificarFibonacci()">Generar Números</button>
+    <p id="resultado"></p>
+    <div id="cartas"></div>
+
+    <script>
+        // Función para generar números aleatorios entre 1 y 11
+        function generarNumeroAleatorio() {
+            return Math.floor(Math.random() * 11) + 1;
+        }
+
+        // Función para verificar si un número es Fibonacci
+        function esFibonacci(numero) {
+            let a = 0;
+            let b = 1;
+            while (b < numero) {
+                let temp = b;
+                b = a + b;
+                a = temp;
+            }
+            return b === numero;
+        }
+
+        // Función para generar cartas
+        function generarCartas() {
+            const cartasDiv = document.getElementById("cartas");
+            cartasDiv.innerHTML = "";
+
+            for (let i = 0; i < 3; i++) {
+                const carta = document.createElement("div");
+                carta.classList.add("carta");
+                cartasDiv.appendChild(carta);
+            }
+        }
+
+        // Función principal
+        function generarNumerosYVerificarFibonacci() {
+            const numero1 = generarNumeroAleatorio();
+            const numero2 = generarNumeroAleatorio();
+            const suma = numero1 + numero2;
+
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.textContent = `Número 1: ${numero1}, Número 2: ${numero2}, Suma: ${suma}`;
+
+            if (esFibonacci(suma)) {
+                resultadoDiv.textContent += " (Es un número Fibonacci)";
+                generarCartas();
+            } else {
+                resultadoDiv.textContent += " (No es un número Fibonacci)";
+                const cartasDiv = document.getElementById("cartas");
+                cartasDiv.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

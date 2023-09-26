@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Cartas Fibonacci</title>
+    <!-- Agregar la referencia a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #numeros {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .numero-input {
+            width: 50px;
+        }
+        .numero-button {
+            margin-left: 10px;
+        }
+        #cartas {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .carta {
+            width: 200px;
+            height: 300px;
+            margin: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generador de Cartas Fibonacci</h1>
+    <div id="numeros">
+        <input type="number" class="numero-input" id="inputNumero1" placeholder="Número 1">
+        <button class="numero-button" onclick="generarNumero(1)">Generar Número 1</button>
+        <input type="number" class="numero-input" id="inputNumero2" placeholder="Número 2">
+        <button class="numero-button" onclick="generarNumero(2)">Generar Número 2</button>
+    </div>
+    <button onclick="generarNumerosYVerificarFibonacci()">Generar Números</button>
+    <p id="resultado"></p>
+    <div id="cartas">
+        <!-- Carta 1 -->
+        <div class="carta carta-numero" id="carta1">
+            <div class="card-body">
+                <h5 class="card-title">Número 1</h5>
+                <p class="card-text" id="numero1">-</p>
+            </div>
+        </div>
+        <!-- Carta 2 -->
+        <div class="carta carta-numero" id="carta2">
+            <div class="card-body">
+                <h5 class="card-title">Número 2</h5>
+                <p class="card-text" id="numero2">-</p>
+            </div>
+        </div>
+        <!-- Carta 3 (para números Fibonacci) -->
+        <div class="carta carta-fibonacci" id="carta3">
+            <div class="card-body">
+                <h5 class="card-title">Número Fibonacci</h5>
+                <p class="card-text" id="numeroFibonacci">-</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agregar la referencia a Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+
+    <script>
+        // Función para generar un número aleatorio y mostrarlo en el input correspondiente
+        function generarNumero(inputId) {
+            const inputElement = document.getElementById(`inputNumero${inputId}`);
+            const numeroAleatorio = Math.floor(Math.random() * 11) + 1;
+            inputElement.value = numeroAleatorio;
+        }
+
+        // Función para verificar si un número es Fibonacci
+        function esFibonacci(numero) {
+            let a = 0;
+            let b = 1;
+            while (b < numero) {
+                let temp = b;
+                b = a + b;
+                a = temp;
+            }
+            return b === numero;
+        }
+
+        // Función para generar cartas
+        function generarCartas() {
+            const numero1 = parseInt(document.getElementById("inputNumero1").value);
+            const numero2 = parseInt(document.getElementById("inputNumero2").value);
+            const suma = numero1 + numero2;
+
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.textContent = `Número 1: ${numero1}, Número 2: ${numero2}, Suma: ${suma}`;
+
+            // Actualizar los valores de las cartas
+            document.getElementById("numero1").textContent = numero1;
+            document.getElementById("numero2").textContent = numero2;
+
+            const carta3 = document.getElementById("carta3");
+            const numeroFibonacci = document.getElementById("numeroFibonacci");
+
+            if (esFibonacci(suma)) {
+                resultadoDiv.textContent += " (Es un número Fibonacci)";
+                numeroFibonacci.textContent = suma;
+                carta3.classList.add("animated", "flip");
+            } else {
+                resultadoDiv.textContent += " (No es un número Fibonacci)";
+                numeroFibonacci.textContent = "-";
+                carta3.classList.remove("animated", "flip");
+            }
+        }
+
+        // Función principal
+        function generarNumerosYVerificarFibonacci() {
+            generarCartas();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+#cartas {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.carta {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    border: 1px solid #000;
+    background-image: url(https://media.istockphoto.com/id/1210302163/es/vector/joker-jugando-a-la-tarjeta-en-estilo-retro.jpg?s=612x612&w=0&k=20&c=Kh2mSBFuZOvOfKOSoQDt1tObji7fItdmDdf2EvIeVdU=);
+    background-position: center;
+    background-size: cover;}
+
+    @media (max-width:765px) {
+        #cartas {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    }
