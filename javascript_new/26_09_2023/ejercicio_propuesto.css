@@ -21,6 +21,18 @@
     gap: 10px;
 }
 
+.tareas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarea{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
   .lista_tareas input{
     padding: 10px;
   }
@@ -31,4 +43,8 @@
     color: #FFF;
     border: 2px solid grey;
   }
+
+  .checked {
+    text-decoration: line-through;
+}
 
