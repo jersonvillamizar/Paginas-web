@@ -13,13 +13,26 @@ function agregarCampo() {
   // Agregar la etiqueta y la caja de texto al formulario
   formulario.appendChild(label);
   formulario.appendChild(input);
-  input.classList.add('sin_color');
+}
+
+function cambiarfondo() {
+  const formulario = document.querySelectorAll('textarea');
+  formulario.forEach(elemento => elemento.style.backgroundColor = 'lightblue')
+}
+
+function eliminarElemento(){
+  const formulario = document.getElementById('miFormulario');
+  const hijo_formulario = formulario.children;
+  formulario.removeChild(hijo_formulario[hijo_formulario.length-1])
+  formulario.removeChild(hijo_formulario[hijo_formulario.length-1])
 }
 
 // Obtener el botón de "Agregar Campo" y agregar un manejador de eventos
 const botonAgregarCampo = document.getElementById('agregarCampo');
 botonAgregarCampo.addEventListener('click', agregarCampo);
 
+const botonCambiarFondo = document.getElementById('fondo');
+botonCambiarFondo.addEventListener('click', cambiarfondo);
 
-
-
+const botonEliminar = document.getElementById('eliminar');
+botonEliminar.addEventListener('click', eliminarElemento)
