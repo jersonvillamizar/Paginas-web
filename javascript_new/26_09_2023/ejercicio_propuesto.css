@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body a{
+    text-decoration: none;
+    color: lightskyblue;
+  }
+
+  body {
+    font-family: 'Marcellus SC', serif;
+  }
+
+  .lista_tareas{
+    margin: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+  .lista_tareas input{
+    padding: 10px;
+  }
+
+  .lista_tareas button{
+    padding: 5px;
+    background-color: #0e0e0e;
+    color: #FFF;
+    border: 2px solid grey;
+  }
+
