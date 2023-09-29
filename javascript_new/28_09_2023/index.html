@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .caja_uno{
+            display: flex;
+            margin: 20px 0;
+            gap: 10px;
+        }
+
+        #resultados{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 20vw;
+            margin: 20px 0;
+            border: solid #0e0e0ec4 1px;
+        }
+
+        .precio{
+            margin: 10px 10px;
+        }
+
+        #resultados_2{
+            align-items: center;
+            margin: 20px 0;
+            gap: 5px;
+            width: 20vw;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="caja_uno">Calculadora de Descuentos</h1>
+    <div class="caja_uno">
+        <label for="bton_precio">Cantidad de Precios: </label>
+        <input type="number" id="bton_precio" onfocus="limpiar()" placeholder="Ingrese la cantidad">
+        <button onclick="crearvalores()">Agregar</button>
+    </div>
+
+    <div id="resultados">
+
+    </div>
+
+    <div class="caja_uno">
+        <label for="descuento">Cantidad de Descuento:</label>
+        <input type="number" id="descuento" onfocus="limpiar()" placeholder="Ingrese el descuento">
+        <button id="calcular" onclick="calcularDescuento()">Agregar</button>
+    </div>
+
+    <div id="resultados_dos">
+
+    </div>
+
+<script src="./app.js"></script>    
+</body>
+</html>

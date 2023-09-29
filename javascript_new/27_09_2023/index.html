@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Juego de Adivinanza</title>
+</head>
+<body>
+    <h1>Juego de Adivinanza</h1>
+    <p>Intenta adivinar el número secreto entre 1 y 100.</p>
+    <input type="number" id="numero" onfocus="limpiar()" placeholder="Ingresa un número">
+    <button id="adivinar" onclick="verificarNumero()">Adivinar</button>
+    <div id="resultado"></div>
+    <script src="app.js"></script>
+</body>
+</html>
