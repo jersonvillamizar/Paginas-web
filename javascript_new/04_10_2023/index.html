@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link id="estilos" rel="stylesheet" href="./estilo2.css">
+    <title>Document</title>
+</head>
+<body>
+  <nav class="navbar fixed-top navegador px-5">
+    <div class="container-fluid">
+        <div>
+          <select id="estiloSelector">
+            <option value="estilo2">Oscuro</option>
+            <option value="estilo1">Base</option>
+        </select>
+        <button id="guardarEstilo">Guardar</button>
+        </div>
+        <a class="navbar-brand oculto" href="#">indexOf, lastIndexOf, toString</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Index</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                indexOf();
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Syntax</a></li>
+                <li><a class="dropdown-item" href="#">Description</a></li>
+                <li><a class="dropdown-item" href="#">Examples</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                lastindexOf();
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Syntax</a></li>
+                <li><a class="dropdown-item" href="#">Description</a></li>
+                <li><a class="dropdown-item" href="#">Examples</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                toString();
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Syntax</a></li>
+                <li><a class="dropdown-item" href="#">Description</a></li>
+                <li><a class="dropdown-item" href="#">Examples</a></li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <div class="card w-75 mb-3 mx-auto my-5">
+                <div class="card-body d-flex flex-column">
+                  <section>
+                    <h2>indexOf - Array.indexOf()</h2>
+                    <p>The indexOf() method of Array instances returns the first index at which a given element can be found in the array, or -1 if it is not present.</p>
+                  </section>
+                  <section>
+                    <h2>Syntax</h2>
+                    <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token function">indexOf</span><span class="token punctuation">(</span>searchElement<span class="token punctuation">)</span>
+    <span class="token function">indexOf</span><span class="token punctuation">(</span>searchElement<span class="token punctuation">,</span> fromIndex<span class="token punctuation">)</span></code></pre>
+                    </div>
+                    <h3>Parameters</h3>
+                    <p><strong>| searchElement:</strong></p>
+                    <ul>
+                      <li><p>Element to locate in the array.</p></li>
+                    </ul>
+                    <p><strong>| fromIndex:</strong> Zero-based index at which to start searching, converted to an integer.</p>
+                    <ul>
+                      <li><p>Negative index counts back from the end of the array — if fromIndex < 0, fromIndex + array.length is used. Note, the array is still searched from front to back in this case.</p></li>
+                      <li><p>If fromIndex < -array.length or fromIndex is omitted, 0 is used, causing the entire array to be searched.</p></li>
+                      <li><p>If fromIndex >= array.length, the array is not searched and -1 is returned.</p></li>
+                    </ul>
+                    <h3>Return value</h3>
+                    <p>The first index of searchElement in the array; -1 if not found.</p>
+                  </section>
+                  <section>
+                    <h2>Description</h2>
+                    <p>The indexOf() method compares searchElement to elements of the array using strict equality (the same algorithm used by the === operator). NaN values are never compared as equal, so indexOf() always returns -1 when searchElement is NaN.</p>
+                    <p>The indexOf() method skips empty slots in sparse arrays.</p>
+                    <p>The indexOf() method is generic. It only expects the this value to have a length property and integer-keyed properties.</p>
+                  </section>
+                  <section>
+                    <h2>Examples</h2>
+                    <h3>Using indexOf()</h3>
+                    <p>The following example uses indexOf() to locate values in an array.</p>
+                    <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+    array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span>
+    array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+    array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span>
+    array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+                      </code></pre>
+                    </div>
+                    <p>You cannot use indexOf() to search for NaN.</p>
+                    <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">NaN</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span></code></pre>
+                    </div>
+                    <h3>Finding all the occurrences of an element</h3>
+                    <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> indices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token string">"a"</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> idx <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>idx <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      indices<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      idx <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>indices<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// [0, 2, 4]</span></code></pre>
+                    </div>
+                    <h3>Finding if an element exists in the array or not and updating the array</h3>
+                    <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>   <span class="token keyword">function</span> <span class="token function">updateVegetablesCollection</span><span class="token punctuation">(</span><span class="token parameter">veggies<span class="token punctuation">,</span> veggie</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>veggies<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>veggie<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        veggies<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>veggie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">New veggies collection is: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>veggies<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>veggie<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> already exists in the veggies collection.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">const</span> veggies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"potato"</span><span class="token punctuation">,</span> <span class="token string">"tomato"</span><span class="token punctuation">,</span> <span class="token string">"chillies"</span><span class="token punctuation">,</span> <span class="token string">"green-pepper"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    
+    <span class="token function">updateVegetablesCollection</span><span class="token punctuation">(</span>veggies<span class="token punctuation">,</span> <span class="token string">"spinach"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// New veggies collection is: potato,tomato,chillies,green-pepper,spinach</span>
+    <span class="token function">updateVegetablesCollection</span><span class="token punctuation">(</span>veggies<span class="token punctuation">,</span> <span class="token string">"spinach"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// spinach already exists in the veggies collection.</span></code></pre>
+                    </div>
+                    <h3>Using indexOf() on sparse arrays</h3>
+                    <p>You cannot use indexOf() to search for empty slots in sparse arrays.</p>
+                    <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span></code></pre>
+                    </div>
+                    <h3>Calling indexOf() on non-array objects</h3>
+                    <p>The indexOf() method reads the length property of this and then accesses each property whose key is a nonnegative integer less than length.</p>
+                    <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> arrayLike <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">length</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token number">0</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token number">1</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token number">2</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      <span class="token number">3</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token comment">// ignored by indexOf() since length is 3</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 0</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// -1</span>
+                    </code></pre>
+                    </div>
+                  </section>
+                  <section>
+                    <h2>Try Yourself</h2>
+                    <div class="section-content">
+                      <iframe id="myiframe" class="interactive is-js-height" height="450"  src="https://interactive-examples.mdn.mozilla.net/pages/js/array-indexof.html" title="MDN Web Docs Interactive Example" loading="lazy" data-readystate="complete"></iframe>
+                    </div>
+                  </section>
+                </div>
+            </div>
+
+            <div class="card w-75 mb-3 mx-auto my-5">
+              <div class="card-body d-flex flex-column">
+                <section>
+                  <h2>lastIndexOf - Array.lastIndexOf()</h2>
+                  <p>The lastIndexOf() method of Array instances returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.</p>
+                </section>
+                <section>
+                  <h2>Syntax</h2>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token function">lastIndexOf</span><span class="token punctuation">(</span>searchElement<span class="token punctuation">)</span>
+    <span class="token function">lastIndexOf</span><span class="token punctuation">(</span>searchElement<span class="token punctuation">,</span> fromIndex<span class="token punctuation">)</span></code></pre>
+                  </div>
+                  <h3>Parameters</h3>
+                  <p><strong>| searchElement:</strong></p>
+                  <ul>
+                    <li><p>Element to locate in the array.</p></li>
+                  </ul>
+                  <p><strong>| fromIndex:</strong> Zero-based index at which to start searching backwards, converted to an integer.</p>
+                  <ul>
+                    <li><p>Negative index counts back from the end of the array — if fromIndex < 0, fromIndex + array.length is used.</p></li>
+                    <li><p>If fromIndex < -array.length, the array is not searched and -1 is returned. You can think of it conceptually as starting at a nonexistent position before the beginning of the array and going backwards from there. There are no array elements on the way, so searchElement is never found.</p></li>
+                    <li><p>If fromIndex >= array.length or fromIndex is omitted, array.length - 1 is used, causing the entire array to be searched. You can think of it conceptually as starting at a nonexistent position beyond the end of the array and going backwards from there. It eventually reaches the real end position of the array, at which point it starts searching backwards through the actual array elements.</p></li>
+                  </ul>
+                  <h3>Return value</h3>
+                  <p>The last index of searchElement in the array; -1 if not found.</p>
+                </section>
+                <section>
+                  <h2>Description</h2>
+                  <p>The lastIndexOf() method compares searchElement to elements of the array using strict equality (the same algorithm used by the === operator). NaN values are never compared as equal, so lastIndexOf() always returns -1 when searchElement is NaN.</p>
+                  <p>The lastIndexOf() method skips empty slots in sparse arrays.</p>
+                  <p>The lastIndexOf() method is generic. It only expects the this value to have a length property and integer-keyed properties.</p>
+                </section>
+                <section>
+                  <h2>Examples</h2>
+                  <h3>Using lastIndexOf()</h3>
+                  <p>The following example uses lastIndexOf() to locate values in an array.</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    numbers<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+    numbers<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span>
+    numbers<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+    numbers<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+    numbers<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+    numbers<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span></code></pre>
+                  </div>
+                  <p>You cannot use lastIndexOf() to search for NaN.</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">NaN</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span></code></pre>
+                  </div>
+                  <h3>Finding all the occurrences of an element</h3>
+                  <p>The following example uses lastIndexOf to find all the indices of an element in a given array, using push() to add them to another array as they are found.</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> indices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token string">"a"</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> idx <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>idx <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      indices<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      idx <span class="token operator">=</span> idx <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> idx <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>indices<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// [4, 2, 0]</span></code></pre>
+                  </div>
+                  <p>Note that we have to handle the case idx === 0 separately here because the element will always be found regardless of the fromIndex parameter if it is the first element of the array. This is different from the indexOf() method.</p>
+                  <h3>Using lastIndexOf() on sparse arrays</h3>
+                  <p>You cannot use lastIndexOf() to search for empty slots in sparse arrays.</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span></code></pre>
+                  </div>
+                  <h3>Calling indexOf() on non-array objects</h3>
+                  <p>The lastIndexOf() method reads the length property of this and then accesses each property whose key is a nonnegative integer less than length.</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> arrayLike <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">length</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token number">0</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token number">1</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token number">2</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token number">3</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token comment">// ignored by lastIndexOf() since length is 3</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 2</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// -1</span></code></pre>
+                  </div>
+                </section>
+                
+                <section>
+                  <h2>Try Yourself</h2>
+                  <div class="section-content">
+                    <iframe id="myiframe" class="interactive is-js-height" height="450" src="https://interactive-examples.mdn.mozilla.net/pages/js/array-lastindexof.html" title="MDN Web Docs Interactive Example" loading="lazy" data-readystate="complete"></iframe>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <div class="card w-75 mb-3 mx-auto my-5">
+              <div class="card-body d-flex flex-column">
+                <section>
+                  <h2>toString - Array.toString()</h2>
+                  <p>The toString() method of Array instances returns a string representing the specified array and its elements.</p>
+                </section>
+                <section>
+                  <h2>Syntax</h2>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>     <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                  </code></pre>
+                  </div>
+                  <h3>Parameters</h3>
+                  <p><strong>| None</strong></p>
+                  <h3>Return value</h3>
+                  <p>A string representing the elements of the array.</p>
+                </section>
+                <section>
+                  <h2>Description</h2>
+                  <p>The Array object overrides the toString method of Object. The toString method of arrays calls join() internally, which joins the array and returns one string containing each array element separated by commas. If the join method is unavailable or is not a function, Object.prototype.toString is used instead, returning [object Array].</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">.</span>join <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// re-assign `join` with a non-function</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [object Array]</span>
+    
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token function-variable function">join</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+    </code></pre>
+                  </div>
+                  <p>JavaScript calls the toString method automatically when an array is to be represented as a text value or when an array is referred to in a string concatenation.</p>
+                  <p>Array.prototype.toString recursively converts each element, including other arrays, to strings. Because the string returned by Array.prototype.toString does not have delimiters, nested arrays look like they are flattened.</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> matrix <span class="token operator">=</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>matrix<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1,2,3,4,5,6,7,8,9</span>
+    </code></pre>
+                  </div>
+                  <p>When an array is cyclic (it contains an element that is itself), browsers avoid infinite recursion by ignoring the cyclic reference.</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> arr<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1,3,,4,2</span>
+    </code></pre>
+                  </div>
+                </section>
+                <section>
+                  <h2>Examples</h2>
+                  <h3>Using toString()</h3>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    <span class="token keyword">const</span> array1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"1a"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>array1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "1,2,a,1a"</span>
+    </code></pre>
+                  </div>
+                  <h3>Using toString() on sparse arrays</h3>
+                  <p>Following the behavior of join(), toString() treats empty slots the same as undefined and produces an extra separator:</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '1,,3'</span>
+                  </code></pre>
+                  </div>
+                  <h3>Calling toString() on non-array objects</h3>
+                  <p>toString() is generic. It expects this to have a join() method; or, failing that, uses Object.prototype.toString() instead.</p>
+                  <div class="code-example"><pre class="brush: js notranslate" data-signature="EmIkIytb7N093hjoNtA2MVX5ZhN83/gNhjyXEzUbp0A="><code>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token function-variable function">join</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 1; a number</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token function-variable function">join</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">undefined</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// undefined</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">join</span><span class="token operator">:</span> <span class="token string">"not function"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// "[object Object]"</span>
+    </code></pre>
+                  </div>
+                </section>
+                
+                <section>
+                  <h2>Try Yourself</h2>
+                  <div class="section-content">
+                    <iframe id="myiframe" class="interactive is-shorter-height" height="400" src="https://interactive-examples.mdn.mozilla.net/pages/js/array-tostring.html" title="MDN Web Docs Interactive Example" loading="lazy" data-readystate="complete"></iframe>                  </div>
+                </section>
+              </div>
+            </div>
+        </main>
+        <footer>
+        
+        </footer>
+    </div>
+<script src="./funciones.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

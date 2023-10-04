@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  h2{
+    border-bottom: 1px solid rgba(136, 136, 136, 0.449);
+    margin-top: 30px;
+  }
+
+  .oculto{
+    pointer-events: none;
+  }
+
+  .code-example{
+    background-color: #f2f1f1;
+  }
+
+  .token.function{
+    color: #ff97a0
+  }
+
+  .token.number{
+    color: #00d061;
+  }
+
+  .token.comment{
+    color: #b3b3b3;
+  }
+
+  .token.keyword{
+    color: #c1cff1;
+  }
+
+  .token.string{
+    color: #00d061;
+  }
+
+  .interactive{
+    background-color: #f9f9fb;
+    color: #1b1b1b;
+  }
+
+  .container{
+    max-width: 1180px;
+    margin: auto;
+  }
+
+  .navegador{
+    background-color: rgb(203, 203, 203);
+    max-width: 1080px;
+    margin: auto;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+
+  .card-body{
+    padding: 5vh 5vw;
+    text-align: justify;
+  }
+
+  .section-content{
+    text-align: center;
+  }
+
+  #myiframe {
+    width: 100%;
+ }
+ 
+ @media (max-width: 560px){
+  .oculto{
+    display: none;
+  }
+ }
