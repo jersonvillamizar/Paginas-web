@@ -108,3 +108,11 @@
     display: none;
   }
  }
+
+ .valid {
+  background-color: #7FFF7F; /* Fondo verde cuando es válido */
+}
+
+.invalid {
+  background-color: #FF7F7F; /* Fondo rojo cuando no es válido */
+}

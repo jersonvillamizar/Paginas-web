@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validación de Título y Nombre</title>
+    <style>
+        .valid {
+            background-color: #7FFF7F; /* Fondo verde cuando es válido */
+        }
+
+        .invalid {
+            background-color: #FF7F7F; /* Fondo rojo cuando no es válido */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ingrese un Título y un Nombre</h1>
+    <form id="myForm">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" required>
+        <button type="button" id="checkTitulo">Verificar</button>
+        <span id="tituloMensaje" style="color: #0e0e0e; background-color: bisque;"></span><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <button type="button" id="checkNombre">Verificar</button>
+        <span id="nombreMensaje" style="color: #0e0e0e; background-color: bisque;"></span><br><br>
+        
+        <input type="submit" value="Validar">
+    </form>
+
+    <script>
+        function validarCampo(inputElement, mensajeElement) {
+            let valor_invalido = inputElement.value.trim();
+
+            if (valor_invalido !== "") {
+                inputElement.classList.remove("invalid");
+                inputElement.classList.add("valid");
+                mensajeElement.textContent = "Válido";
+            } else {
+                inputElement.classList.remove("valid");
+                inputElement.classList.add("invalid");
+                mensajeElement.textContent = "No válido";
+            }
+        }
+
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            validarCampo(document.getElementById("titulo"), document.getElementById("tituloMensaje"));
+            validarCampo(document.getElementById("nombre"), document.getElementById("nombreMensaje"));
+        });
+
+        document.getElementById("checkTitulo").addEventListener("click", function () {
+            validarCampo(document.getElementById("titulo"), document.getElementById("tituloMensaje"));
+        });
+
+        document.getElementById("checkNombre").addEventListener("click", function () {
+            validarCampo(document.getElementById("nombre"), document.getElementById("nombreMensaje"));
+        });
+    </script>
+</body>
+</html>

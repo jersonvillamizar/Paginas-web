@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validación de Título y Nombre</title>
+</head>
+<body>
+    <h1>Ingrese un Título y un Nombre</h1>
+    <form id="myForm">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" required>
+        <span id="tituloMensaje" style="color: red;"></span><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <span id="nombreMensaje" style="color: red;"></span><br><br>
+
+        <input type="submit" value="Validar">
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var tituloInput = document.getElementById("titulo");
+            var nombreInput = document.getElementById("nombre");
+            var tituloMensaje = document.getElementById("tituloMensaje");
+            var nombreMensaje = document.getElementById("nombreMensaje");
+
+            if (tituloInput.value.trim() === "") {
+                tituloMensaje.textContent = "El título no puede estar vacío";
+            } else {
+                tituloMensaje.textContent = "El título es válido";
+            }
+
+            if (nombreInput.value.trim() === "") {
+                nombreMensaje.textContent = "El nombre no puede estar vacío";
+            } else {
+                nombreMensaje.textContent = "El nombre es válido";
+            }
+        });
+    </script>
+</body>
+</html>

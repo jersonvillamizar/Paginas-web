@@ -16,22 +16,28 @@
         </div>
         <div class="portada" id="portada">
             <section class="portada_url busqueda" id="portada_url">
-                <label for="busqueda_portada_url">Url portada: </label><input id="busqueda_portada_url" type="text" placeholder="Url portada">
+                <label for="busqueda_portada_url">Url portada: </label>
+                <input id="busqueda_portada_url" type="text" placeholder="Url portada">
             </section>
             <section class="titulo busqueda" id="titulo">
-                <label for="busqueda_titulo">Titulo: </label><input id="busqueda_titulo" type="text" placeholder="Titulo">
+                <label for="busqueda_titulo">Titulo: </label>
+                <input id="busqueda_titulo" type="text" placeholder="Titulo">
             </section>
             <section class="autor busqueda" id="autor">
-                <label for="busqueda_autor">Autor: </label><input id="busqueda_autor" type="text" placeholder="Autor">            
+                <label for="busqueda_autor">Autor: </label>
+                <input id="busqueda_autor" type="text" placeholder="Autor">            
             </section>
             <section class="año busqueda" id="año">
-                <label for="busqueda_año">Año de publicacion: </label><input id="busqueda_año" type="text" placeholder="Año">            
+                <label for="busqueda_año">Año de publicacion: </label>
+                <input id="busqueda_año" type="date" placeholder="Año">            
             </section>
             <section class="disponible busqueda" id="disponible">
-                <label for="busqueda_disponible">Disponible: </label><input id="busqueda_disponible" type="text" placeholder="Disponibilidad">            
+                <label for="busqueda_disponible">Disponible: </label>
+                <input id="busqueda_disponible" type="text" placeholder="Disponibilidad">            
             </section>
             <section class="prestado busqueda" id="prestado">
-                <label for="busqueda_prestado">Prestado a: </label><input id="busqueda_prestado" type="text" placeholder="Persona que lo ocupa">
+                <label for="busqueda_prestado">Prestado a: </label>
+                <input id="busqueda_prestado" type="text" placeholder="Persona que lo ocupa">
             </section>
             <button id="busqueda_btn" onclick="busqueda()">Buscar</button>
         </div>
@@ -45,27 +51,45 @@
         <div class="entrada">
             <h2>Ingresar Libro</h2>
         </div>
-        <div class="portada" id="portada">
+        <form class="portada" id="myForm">
             <section class="portada_url ingreso" id="portada_url">
-                <label for="ingreso_portada_url">Url portada: </label><input id="ingreso_portada_url" type="text" placeholder="Buscar por portada">
+                <label for="ingreso_portada_url">Url portada: </label>
+                <input id="ingreso_portada_url" type="text" placeholder="Buscar por portada">
+                <button type="button" id="check_portada">Verificar</button>
+                <span id="portada_mensaje" style="color: #0e0e0e; background-color: bisque;"></span>
             </section>
             <section class="titulo ingreso" id="titulo">
-                <label for="ingreso_titulo">Titulo: </label><input id="ingreso_titulo" type="text" placeholder="Buscar por titulo">
+                <label for="ingreso_titulo">Titulo: </label>
+                <input id="ingreso_titulo" type="text" placeholder="Buscar por titulo">
+                <button type="button" id="check_titulo">Verificar</button>
+                <span id="titulo_mensaje" style="color: #0e0e0e; background-color: bisque;"></span>
             </section>
             <section class="autor ingreso" id="autor">
-                <label for="ingreso_autor">Autor: </label><input id="ingreso_autor" type="text" placeholder="Buscar por autor">            
+                <label for="ingreso_autor">Autor: </label>
+                <input id="ingreso_autor" type="text" placeholder="Buscar por autor">
+                <button type="button" id="check_autor">Verificar</button>
+                <span id="autor_mensaje" style="color: #0e0e0e; background-color: bisque;"></span>            
             </section>
             <section class="año ingreso" id="año">
-                <label for="ingreso_año">Año de publicacion: </label><input id="ingreso_año" type="text" placeholder="Buscar por año">            
+                <label for="ingreso_año">Año de publicacion: </label>
+                <input id="ingreso_año" type="date" placeholder="Buscar por año">
+                <button type="button" id="check_año">Verificar</button>
+                <span id="año_mensaje" style="color: #0e0e0e; background-color: bisque;"></span>            
             </section>
             <section class="disponible ingreso" id="disponible">
-                <label for="ingreso_disponible">Disponible: </label><input id="ingreso_disponible" type="text" placeholder="Buscar por disponibilidad">            
+                <label for="ingreso_disponible">Disponible: </label>
+                <input id="ingreso_disponible" type="text" placeholder="Buscar por disponibilidad">
+                <button type="button" id="check_disponible">Verificar</button>
+                <span id="disponible_mensaje" style="color: #0e0e0e; background-color: bisque;"></span>            
             </section>
             <section class="prestado ingreso" id="prestado">
-                <label for="ingreso_prestado">Prestado a: </label><input id="ingreso_prestado" type="text" placeholder="Buscar por persona">
+                <label for="ingreso_prestado">Prestado a: </label>
+                <input id="ingreso_prestado" type="text" placeholder="Buscar por persona">
+                <button type="button" id="check_ingreso">Verificar</button>
+                <span id="ingreso_mensaje" style="color: #0e0e0e; background-color: bisque;"></span>
             </section>
-            <button id="ingresar_btn" onclick="ingresar()">Ingresar</button>
-        </div>
+            <input type="submit" value="Validar">
+        </form>
     </main>
     <script src="./funcion.js"></script>
 </body>

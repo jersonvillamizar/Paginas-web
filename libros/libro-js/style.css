@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Marcellus&family=Marcellus+SC&family=Oswald&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 900;
+}
+
+body{
+    background-color: #212529;
+}
+
+.navegador{
+    max-width: 1080px;
+    margin: auto;
+    color: white;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 4;
+}
+
+h1{
+    color: #FFF;
+}
+
+.infoIngreso{
+    max-width: 1080px;
+    margin: 5vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+
+.infoIngreso form{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://us.123rf.com/450wm/smeagorl/smeagorl1011/smeagorl101100191/8290264-navidad-marco-ornamentado-con-pino-abstracta.jpg?ver=6);
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+    border: 10px solid #0e0e0e;
+    padding: 3vw;
+    text-align: center;
+    color: #FFF;
+}
+
+.infoIngreso form button{
+    padding: 5px;
+}
+
+.infoIngreso form button:hover{
+    padding: 5px;
+    background-color: #FFF;
+    color: black;
+    border: 1px solid white;
+}
+
+.busqueda{
+    max-width: 1080px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    border: 10px solid #0e0e0e;
+    padding: 6vh 0;
+    text-align: center;
+    color: #FFF;
+}
+
+.contenedorDeLibros{
+    max-width: 1080px;
+    margin: 5vh auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));    
+    align-items: center;
+    gap: 1vh;
+}
+
+.librosContenedor{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://img.freepik.com/fotos-premium/luz-suave-bosque-oscuro-portada-libro-hombre-bosque-luz-bosque_849827-107.jpg?w=2000);
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    border: 10px solid #0e0e0e;
+    padding: 6vh 0;
+    text-align: center;
+    color: #FFF;
+    width: 280px;
+    min-height: 450px ;
+}

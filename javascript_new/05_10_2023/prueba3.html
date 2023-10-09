@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validación de Título y Nombre</title>
+    <style>
+        .valid-div {
+            background-color: #7FFF7F; /* Fondo verde cuando es válido */
+        }
+
+        .invalid-div {
+            background-color: #FF7F7F; /* Fondo rojo cuando no es válido */
+        }
+
+        .contenido-valido {
+            color: green;
+            font-weight: bold;
+        }
+
+        .contenido-invalido {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ingrese un Título y un Nombre</h1>
+    <form id="myForm">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" required>
+        <div id="checkTitulo" class="invalid-div">
+            <span class="contenido-invalido">X</span>
+        </div>
+        <span id="tituloMensaje" style="color: red;"></span><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <div id="checkNombre" class="invalid-div">
+            <span class="contenido-invalido">X</span>
+        </div>
+        <span id="nombreMensaje" style="color: red;"></span><br><br>
+
+        <input type="submit" value="Validar">
+    </form>
+
+    <script>
+        function validarCampo(inputElement, divElement, mensajeElement) {
+            var inputValue = inputElement.value.trim();
+            var isValid = inputValue !== "";
+
+            if (isValid) {
+                divElement.classList.remove("invalid-div");
+                divElement.classList.add("valid-div");
+                divElement.querySelector(".contenido-invalido").style.display = "none";
+                divElement.querySelector(".contenido-valido").style.display = "inline";
+                mensajeElement.textContent = "Válido";
+            } else {
+                divElement.classList.remove("valid-div");
+                divElement.classList.add("invalid-div");
+                divElement.querySelector(".contenido-valido").style.display = "none";
+                divElement.querySelector(".contenido-invalido").style.display = "inline";
+                mensajeElement.textContent = "No válido";
+            }
+        }
+
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            validarCampo(document.getElementById("titulo"), document.getElementById("checkTitulo"), document.getElementById("tituloMensaje"));
+            validarCampo(document.getElementById("nombre"), document.getElementById("checkNombre"), document.getElementById("nombreMensaje"));
+        });
+
+        document.getElementById("titulo").addEventListener("input", function () {
+            validarCampo(document.getElementById("titulo"), document.getElementById("checkTitulo"), document.getElementById("tituloMensaje"));
+        });
+
+        document.getElementById("nombre").addEventListener("input", function () {
+            validarCampo(document.getElementById("nombre"), document.getElementById("checkNombre"), document.getElementById("nombreMensaje"));
+        });
+    </script>
+</body>
+</html>
