@@ -109,7 +109,6 @@ function cerrarModal () {
   personaPresta.value = ''
 }
 
-
 prestadoLibro.addEventListener("click", (e) => {
   prestadoALibro.disabled = !prestadoLibro.checked
 })
@@ -189,7 +188,7 @@ function crearLibro() {
   const valorAutor = autorLibro.value
   const valorPrestado = prestadoLibro.checked
   const valorAPrestar = prestadoALibro.value
-  console.log(valorTitulo)
+  
   if (valorTitulo.trim() === '' || valorTitulo.length <= 2) {
     console.log("Entroooooo")
     alertaError("Título")
