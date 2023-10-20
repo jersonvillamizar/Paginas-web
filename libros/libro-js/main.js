@@ -6,12 +6,14 @@ const fechaLibro = $("fechaLibro")
 const autorLibro = $("autorLibro")
 const prestadoLibro = $("prestadoLibro")
 const prestadoALibro = $("prestadoALibro")
+
 const criterioBusqueda = $("criterioBusqueda")
+
 const contenedorAutorBuscador = $("contenedorAutorBuscador")
 const contenedorTituloBuscador = $("contenedorTituloBuscador")
 const contenedorEstadoBuscador = $("contenedorEstadoBuscador")
-const valorInputReferencia = $("prestado")
 const contenedorPrestar = $("contenedorPrestar")
+const valorInputReferencia = $("prestado")
 const personaPresta = $("personaPresta")
 let ID_LIBRO = null
 
@@ -65,7 +67,7 @@ function mostrarInformacion (libros = LIBROS_JSON) {
     const botonPrestar = `<button onclick="guardarId(${elemento.id})">🆕</button>`
     const botonDevolver = `<button onclick="devolverLibro(${elemento.id})">🔙</button>`
     const htmlLibro = `
-      <div class="librosContenedor">
+      <div class="librosContenedor" >
         <small>Libro: ${elemento.id}</small>
         <button onclick="eliminarLibro(${elemento.prestado}, ${elemento.id})">❌</button>
         ${elemento.prestado ? botonDevolver : botonPrestar}
@@ -108,6 +110,7 @@ function cerrarModal () {
   contenedorPrestar.style.display = "none"
   personaPresta.value = ''
 }
+
 
 prestadoLibro.addEventListener("click", (e) => {
   prestadoALibro.disabled = !prestadoLibro.checked
@@ -188,9 +191,8 @@ function crearLibro() {
   const valorAutor = autorLibro.value
   const valorPrestado = prestadoLibro.checked
   const valorAPrestar = prestadoALibro.value
-  
+  console.log(valorTitulo)
   if (valorTitulo.trim() === '' || valorTitulo.length <= 2) {
-    console.log("Entroooooo")
     alertaError("Título")
     return
   }
@@ -268,8 +270,6 @@ function guardarCriterioLocal () {
 function obtenerCriteriosLocal () {
   return JSON.parse(localStorage.getItem("criterio"))
 }
-
-
 
 function renderizadoInicial () {
   if (informacionCriterio.valor == null || informacionCriterio.criterio == null) {

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="titulo">
+        <h1>Unit converter</h1>        
+    </div>
+    <div class="contain">
+        <h2>Weight converter</h2>
+        <div class="contain_data">
+            <div>
+                <label for="">From:</label>
+                <input type="number" id="quantity_weight">
+                <select name="" id="option_weight">
+                    <option value="Gr">Gr</option>
+                    <option value="Oz">Oz</option>
+                    <option value="Lb">Lb</option>
+                    <option value="Kg">Kg</option>
+                    <option value="@">@</option>
+                </select>
+                <label for="">To => </label>
+                <select name="" id="convers_weight">
+                    <option value="Gr">Gr</option>
+                    <option value="Oz">Oz</option>
+                    <option value="Lb">Lb</option>
+                    <option value="Kg">Kg</option>
+                    <option value="@">@</option>
+                </select>
+            </div>
+        </div>        
+        <div>
+            <h3>Equal to: </h3>
+            <section class="result_all">
+                <h3 id="result_weight"></h3>
+            </section>
+        </div>
+    </div>
+
+    <div class="contain">
+        <h2>Length converter</h2>
+        <div class="contain_data">
+            <div>
+                <label for="">From:</label>
+                <input type="number" id="quantity_lenght">
+                <select name="" id="option_lenght">
+                    <option value="Codo">Codo</option>
+                    <option value="Yarda">Yarda</option>
+                    <option value="M">Metro</option>
+                    <option value="Km">Km</option>
+                    <option value="Milla">Milla</option>
+                </select>
+                <label for="">To => </label>
+                <select name="" id="convers_lenght">
+                    <option value="Codo">Codo</option>
+                    <option value="Yarda">Yarda</option>
+                    <option value="M">Metro</option>
+                    <option value="Km">Km</option>
+                    <option value="Milla">Milla</option>
+                </select>
+            </div>
+        </div>        
+        <div>
+            <h3>Equal to: </h3>
+            <section class="result_all">
+                <h3 id="result_lenght"></h3>
+            </section>
+        </div>
+    </div>
+
+    <div class="contain">
+        <h2>Temperature converter</h2>
+        <div class="contain_data">
+            <div>
+                <label for="">From:</label>
+                <input type="number" id="quantity_temperature">
+                <select name="" id="option_temperature">
+                    <option value="C">Celcius</option>
+                    <option value="K">Kelvin</option>
+                    <option value="R">Rankine</option>
+                </select>
+                <label for="">To => </label>
+                <select name="" id="convers_temperature">
+                    <option value="C">Celcius</option>
+                    <option value="K">Kelvin</option>
+                    <option value="R">Rankine</option>
+                </select>
+            </div>
+        </div>       
+        <div>
+            <h3>Equal to: </h3>
+            <section class="result_all">
+                <h3 id="result_temperature">---</h3>
+            </section>
+        </div>
+    </div>
+
+    <div class="contain">
+        <h2>Time converter</h2>
+        <div class="contain_data">
+            <div>
+                <label for="">From:</label>
+                <input type="number" id="quantity_time">
+                <select name="" id="option_time">
+                    <option value="Seg">Seconds</option>
+                    <option value="Min">Minutes</option>
+                    <option value="Hora">Hours</option>
+                </select>
+                <label for="">To => </label>
+                <select name="" id="convers_time">
+                    <option value="Seg">Seconds</option>
+                    <option value="Min">Minutes</option>
+                    <option value="Hora">Hours</option>
+                </select>
+            </div>
+        </div>        
+        <div>
+            <h3>Equal to: </h3>
+            <section class="result_all">
+                <h3 id="result_time"></h3>
+            </section>
+        </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
