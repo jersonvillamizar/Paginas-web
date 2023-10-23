@@ -7,11 +7,135 @@
     <title>Untitled</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <div>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Campus GameSoft</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Campus GameSoft</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ingresar_clientes" id="boton_crear">Registrar Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#listado" id="boton_listar">Listar Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Registrar Video Juego</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Comprar Licencia Video Juego</a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="ingresar_clientes">
+        <form action="" id="clientes_formulario" class="d-flex flex-column align-content-center">
+            <label for="cliente_id">
+                Ingrese su numero de identificacion: 
+                <input type="text" placeholder="Numero de identificacion" id="cliente_id" required>
+            </label>
+            <label for="cliente_nombre">
+                Ingrese su nombre: 
+                <input type="text" placeholder="Numero de identificacion" id="cliente_nombre" required>
+            </label>
+            <label for="cliente_apellido">
+                Ingrese sus apellidos: 
+                <input type="text" placeholder="Numero de identificacion" id="cliente_apellido" required>
+            </label>
+            <label for="cliente_telefono">
+                Telefono: 
+                <input type="text" placeholder="Numero de identificacion" id="cliente_telefono" required>
+            </label>
+            <label for="cliente_correo">
+                Correo electrónico: 
+                <input type="text" placeholder="Numero de identificacion" id="cliente_correo" required>
+            </label>
+            <label for="cliente_fecha">
+                Fecha de nacimiento: 
+                <input type="date" placeholder="Numero de identificacion" id="cliente_fecha" required>
+            </label>
+            <label for="cliente_nacionalidad">
+                Nacionalidad: 
+                <input type="text" placeholder="Numero de identificacion" id="cliente_nacionalidad" required>
+            </label>
+            <button type="submit" class="w-25">Registrarse</button>
+        </form>
+    </div>
     
+    <div id="listado">
+        <input type="text" id="buscador" placeholder="Buscar Cliente">
+        <div id="grupo_listado">
+            <section class="listado_cliente">
+                <p>Identificacion de cliente: </p>
+                <p>Nombre de cliente: </p>
+                <p>Apellido de cliente: </p>
+                <p>Telefono de cliente: </p>
+                <p>Correo de cliente: </p>
+                <p>Fecha de nacimiento de cliente: </p>
+                <p>Nacionalidad de cliente: </p>
+            </section>
+            <section class="listado_botones">
+                <button onclick="modificar_cliente()" >Modificar</button>
+                <button onclick="borrar_cliente()">Eliminar</button>
+            </section>
+        </div>
+    </div>
+
+    <div id="grupo_modificar" style="display: none;" class="position-absolute top-50 start-50 translate-middle">
+        <section class="modificar_cliente">
+            <h2>Modificar cliente</h2>
+            <form action="" id="formulario_modificar" class="d-flex flex-column align-content-center">
+                <label for="modificar_id">
+                    Ingrese su numero de identificacion: 
+                    <input type="text" placeholder="Numero de identificacion" id="modificar_id" disabled>
+                </label>
+                <label for="modificar_nombre">
+                    Ingrese su nombre: 
+                    <input type="text" placeholder="Numero de identificacion" id="modificar_nombre" required>
+                </label>
+                <label for="modificar_apellido">
+                    Ingrese sus apellidos: 
+                    <input type="text" placeholder="Numero de identificacion" id="modificar_apellido" required>
+                </label>
+                <label for="modificar_telefono">
+                    Telefono: 
+                    <input type="text" placeholder="Numero de identificacion" id="modificar_telefono" required>
+                </label>
+                <label for="modificar_correo">
+                    Correo electrónico: 
+                    <input type="text" placeholder="Numero de identificacion" id="modificar_correo" required>
+                </label>
+                <label for="modificar_fecha">
+                    Fecha de nacimiento: 
+                    <input type="date" placeholder="Numero de identificacion" id="modificar_fecha" required>
+                </label>
+                <label for="modificar_nacionalidad">
+                    Nacionalidad: 
+                    <input type="text" placeholder="Numero de identificacion" id="modificar_nacionalidad" required>
+                </label>
+                <button type="submit" class="w-25">Modificar</button>
+                <button type="button" onclick="cerrar_pestana()" class="w-25">Cancelar</button>
+            </form>
+        </section>
+    </div>
+
     <div class="footer-dark">
         <footer>
             <div class="container">
@@ -43,6 +167,7 @@
         </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 

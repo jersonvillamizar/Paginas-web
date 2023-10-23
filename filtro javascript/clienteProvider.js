@@ -1,4 +1,3 @@
-
 import { alerta } from "./funciones_export.js";
 
 class ClienteProvider{  
@@ -22,6 +21,7 @@ class ClienteProvider{
         alerta("Cliente guardado", 2);
     }
 
+
     listarClientes(lista_clientes = this.clientes){
         const validarListaTotal = lista_clientes == this.clientes
         console.log(validarListaTotal)
@@ -30,20 +30,22 @@ class ClienteProvider{
             return "No hay clientes para mostrar"
         }
         const listado = lista_clientes.map(cliente => {
-            return `<section class="listado_cliente">
-            <p>Identificacion de cliente: ${cliente.identificacion}</p>
-            <p>Nombre de cliente: ${cliente.nombre}</p>
-            <p>Apellido de cliente: ${cliente.apellido}</p>
-            <p>Telefono de cliente: ${cliente.telefono}</p>
-            <p>Correo de cliente: ${cliente.correo}</p>
-            <p>Fecha de nacimiento de cliente: ${cliente.fecha_nacimiento}</p>
-            <p>Nacionalidad de cliente: ${cliente.nacionalidad}</p>
-            <p>Puntos de cliente: ${cliente.puntos}</p>
-            <p>Juegos de Cliente: ${cliente.juegos}</p>
-        </section>
-        <section class="listado_botones">
-            <button onclick="rellenar(${cliente.identificacion})">Modificar</button>
-            <button onclick="borrar(${cliente.identificacion})">Eliminar</button>
+            return `<section class="listado_clientes">
+            <div class="listado_cliente">
+                <p>Identificacion de cliente: ${cliente.identificacion}</p>
+                <p>Nombre de cliente: ${cliente.nombre}</p>
+                <p>Apellido de cliente: ${cliente.apellido}</p>
+                <p>Telefono de cliente: ${cliente.telefono}</p>
+                <p>Correo de cliente: ${cliente.correo}</p>
+                <p>Fecha de nacimiento de cliente: ${cliente.fecha_nacimiento}</p>
+                <p>Nacionalidad de cliente: ${cliente.nacionalidad}</p>
+                <p>Puntos de cliente: ${cliente.puntos}</p>
+                <p>Juegos de Cliente: ${cliente.juegos}</p>
+            </div>
+            <div class="listado_botones">
+                <button onclick="rellenar(${cliente.identificacion})">Modificar</button>
+                <button onclick="borrar(${cliente.identificacion})">Eliminar</button>
+            </div>
         </section>`
         })
 
